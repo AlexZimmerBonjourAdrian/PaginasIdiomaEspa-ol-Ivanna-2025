@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 17%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 17%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 17%);
+  --primary: hsl(342, 74%, 31%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(45, 30%, 85%);
+  --secondary-foreground: hsl(0, 0%, 17%);
+  --muted: hsl(45, 20%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(45, 30%, 85%);
+  --accent-foreground: hsl(0, 0%, 17%);
+  --destructive: hsl(356, 91%, 54%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(45, 15%, 90%);
+  --input: hsl(0, 0%, 98%);
+  --ring: hsl(342, 74%, 31%);
+  --chart-1: hsl(203, 88%, 53%);
+  --chart-2: hsl(160, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 79%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(180, 7%, 97%);
+  --sidebar-foreground: hsl(210, 25%, 8%);
+  --sidebar-primary: hsl(203, 88%, 53%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(212, 51%, 93%);
+  --sidebar-accent-foreground: hsl(203, 88%, 53%);
+  --sidebar-border: hsl(205, 25%, 91%);
+  --sidebar-ring: hsl(203, 89%, 53%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Crimson Text', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(200, 7%, 91%);
+  --card: hsl(228, 10%, 10%);
+  --card-foreground: hsl(0, 0%, 85%);
+  --popover: hsl(0, 0%, 0%);
+  --popover-foreground: hsl(200, 7%, 91%);
+  --primary: hsl(342, 76%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(195, 15%, 95%);
+  --secondary-foreground: hsl(210, 25%, 8%);
+  --muted: hsl(0, 0%, 9%);
+  --muted-foreground: hsl(210, 3%, 46%);
+  --accent: hsl(206, 70%, 8%);
+  --accent-foreground: hsl(203, 88%, 53%);
+  --destructive: hsl(356, 91%, 54%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(210, 5%, 15%);
+  --input: hsl(208, 28%, 18%);
+  --ring: hsl(203, 89%, 53%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  .literary-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+
+  .literary-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .literary-text {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .story-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+}

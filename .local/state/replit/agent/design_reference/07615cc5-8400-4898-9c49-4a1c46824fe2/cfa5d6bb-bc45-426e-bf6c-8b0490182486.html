@@ -1,0 +1,575 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Conmigo - Microrrelatos</title>
+    <meta name="description" content="Descubre el fascinante mundo de los microrrelatos con historias reconocidas mundialmente como Amor77 y aprende sobre este arte literario.">
+    <meta name="keywords" content="microrrelatos, literatura, Amor77, cuentos cortos, escritura creativa">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    serif: ["Crimson Text", "serif"],
+                    sans: ["Inter", "sans-serif"],
+                }
+            },
+        }
+    };
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --background: 254 251 246;
+            --foreground: 44 44 44;
+            --card: 255 255 255;
+            --card-foreground: 44 44 44;
+            --primary: 139 21 56;
+            --primary-foreground: 255 255 255;
+            --secondary: 212 175 55;
+            --secondary-foreground: 44 44 44;
+            --muted: 245 240 235;
+            --muted-foreground: 115 115 115;
+            --accent: 212 175 55;
+            --accent-foreground: 44 44 44;
+            --border: 229 224 219;
+            --ring: 139 21 56;
+            --radius: 8px;
+        }
+        
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .literary-title {
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+        }
+        
+        .literary-subtitle {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+        }
+        
+        .literary-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .story-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="literary-title text-xl font-semibold text-primary">
+                    Microrrelatos
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-foreground hover:text-primary transition-colors">Inicio</a>
+                    <a href="#historias" class="text-foreground hover:text-primary transition-colors">Historias</a>
+                    <a href="#aprende" class="text-foreground hover:text-primary transition-colors">Aprende</a>
+                    <a href="#video" class="text-foreground hover:text-primary transition-colors">Video</a>
+                </div>
+                <button class="md:hidden text-foreground">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-20 pb-16 bg-gradient-to-br from-background to-muted">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center fade-in">
+                <h1 class="literary-title text-5xl md:text-7xl font-bold text-primary mb-6">
+                    Aprende Conmigo
+                </h1>
+                <p class="literary-subtitle text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                    Descubre el fascinante mundo de los microrrelatos y sumérgete en historias que conquistan corazones en pocas palabras
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#historias" class="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+                        <i class="fas fa-book-open"></i>
+                        Explorar Historias
+                    </a>
+                    <a href="#aprende" class="border border-border bg-card text-card-foreground px-8 py-3 rounded-lg hover:bg-muted transition-colors inline-flex items-center gap-2">
+                        <i class="fas fa-graduation-cap"></i>
+                        Aprender Más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Stories Section -->
+    <section id="historias" class="py-20 bg-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="literary-title text-4xl md:text-5xl font-bold text-foreground mb-4">
+                    Microrrelatos Reconocidos
+                </h2>
+                <p class="literary-subtitle text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Historias que han conquistado lectores en todo el mundo con su poder narrativo y emotivo
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @COMPONENT: StoryCard [title, content, recognition] -->
+                <div class="story-card bg-card rounded-xl p-8 border border-border fade-in">
+                    <div class="mb-4">
+                        <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-heart mr-1"></i>
+                            Reconocido Mundialmente
+                        </span>
+                    </div>
+                    <h3 class="literary-title text-2xl font-bold text-primary mb-4">Amor77</h3>
+                    <div class="literary-text text-card-foreground mb-6">
+                        <p class="italic mb-4">
+                            "Tenía 77 años cuando descubrió que amar no tenía fecha de caducidad. Su corazón, que creía oxidado por el tiempo, volvió a latir como a los 17."
+                        </p>
+                        <p class="text-sm text-muted-foreground">
+                            Una historia que demuestra que el amor verdadero no conoce límites de edad, conquistando corazones en múltiples idiomas.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-sm text-muted-foreground">
+                        <i class="fas fa-globe mr-2"></i>
+                        Traducido a 12 idiomas
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: StoryCard -->
+
+                <!-- @COMPONENT: StoryCard [title, content, recognition] -->
+                <div class="story-card bg-card rounded-xl p-8 border border-border fade-in">
+                    <div class="mb-4">
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-star mr-1"></i>
+                            Premio Internacional
+                        </span>
+                    </div>
+                    <h3 class="literary-title text-2xl font-bold text-primary mb-4">La Última Carta</h3>
+                    <div class="literary-text text-card-foreground mb-6">
+                        <p class="italic mb-4">
+                            "Escribió su última carta sin saber que sería la primera que él leería después de partir. El amor encontró su camino más allá del tiempo."
+                        </p>
+                        <p class="text-sm text-muted-foreground">
+                            Un relato emotivo sobre el poder de las palabras y los vínculos eternos que trascienden la existencia física.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-sm text-muted-foreground">
+                        <i class="fas fa-trophy mr-2"></i>
+                        Premio Microrrelato 2023
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: StoryCard -->
+
+                <!-- @COMPONENT: StoryCard [title, content, recognition] -->
+                <div class="story-card bg-card rounded-xl p-8 border border-border fade-in">
+                    <div class="mb-4">
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fas fa-fire mr-1"></i>
+                            Viral en Redes
+                        </span>
+                    </div>
+                    <h3 class="literary-title text-2xl font-bold text-primary mb-4">Espejo del Alma</h3>
+                    <div class="literary-text text-card-foreground mb-6">
+                        <p class="italic mb-4">
+                            "Se miró al espejo buscando defectos y encontró historia. Cada arruga era un capítulo, cada cicatriz una lección aprendida."
+                        </p>
+                        <p class="text-sm text-muted-foreground">
+                            Una reflexión profunda sobre la autoaceptación y la belleza de las experiencias vividas.
+                        </p>
+                    </div>
+                    <div class="flex items-center text-sm text-muted-foreground">
+                        <i class="fas fa-share mr-2"></i>
+                        +50k compartidos
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: StoryCard -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn About Microstories Section -->
+    <section id="aprende" class="py-20 bg-muted">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="literary-title text-4xl md:text-5xl font-bold text-foreground mb-4">
+                    ¿Qué son los Microrrelatos?
+                </h2>
+                <p class="literary-subtitle text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Descubre las características y el arte de contar historias completas en pocas palabras
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <!-- A stack of old books with vintage leather covers and golden letters -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Stack of vintage books representing literary tradition" 
+                         class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+
+                <div class="space-y-8 fade-in">
+                    <!-- @COMPONENT: FeatureCard [icon, title, description] -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-compress-arrows-alt text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="literary-title text-xl font-semibold text-foreground mb-2">Brevedad Extrema</h3>
+                            <p class="literary-subtitle text-muted-foreground">
+                                Los microrrelatos son narraciones completas que generalmente no superan las 300 palabras, concentrando máximo impacto en mínimo espacio.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: FeatureCard -->
+
+                    <!-- @COMPONENT: FeatureCard [icon, title, description] -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-secondary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="literary-title text-xl font-semibold text-foreground mb-2">Impacto Inmediato</h3>
+                            <p class="literary-subtitle text-muted-foreground">
+                                Cada palabra cuenta. Los microrrelatos buscan provocar una emoción intensa o reflexión profunda en el lector desde la primera línea.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: FeatureCard -->
+
+                    <!-- @COMPONENT: FeatureCard [icon, title, description] -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-puzzle-piece text-accent text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="literary-title text-xl font-semibold text-foreground mb-2">Narrativa Completa</h3>
+                            <p class="literary-subtitle text-muted-foreground">
+                                A pesar de su brevedad, contienen todos los elementos narrativos: personajes, conflicto, desarrollo y desenlace perfectamente integrados.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: FeatureCard -->
+
+                    <!-- @COMPONENT: FeatureCard [icon, title, description] -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-magic text-primary text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="literary-title text-xl font-semibold text-foreground mb-2">Arte de la Sugerencia</h3>
+                            <p class="literary-subtitle text-muted-foreground">
+                                Lo no dicho es tan importante como lo escrito. Los mejores microrrelatos dejan espacio para que el lector complete la historia.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- @END_COMPONENT: FeatureCard -->
+                </div>
+            </div>
+
+            <!-- Writing Tips Section -->
+            <div class="mt-20 fade-in">
+                <h3 class="literary-title text-3xl font-bold text-center text-foreground mb-12">
+                    Consejos para Escribir Microrrelatos
+                </h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- @COMPONENT: TipCard [number, title, description] -->
+                    <div class="bg-card rounded-lg p-6 border border-border text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-4">1</div>
+                        <h4 class="literary-title text-lg font-semibold text-foreground mb-2">Comienza por el Final</h4>
+                        <p class="literary-subtitle text-sm text-muted-foreground">
+                            Imagina el desenlace primero y construye hacia atrás para lograr máximo impacto.
+                        </p>
+                    </div>
+                    <!-- @END_COMPONENT: TipCard -->
+
+                    <!-- @COMPONENT: TipCard [number, title, description] -->
+                    <div class="bg-card rounded-lg p-6 border border-border text-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-bold text-xl mx-auto mb-4">2</div>
+                        <h4 class="literary-title text-lg font-semibold text-foreground mb-2">Elimina lo Innecesario</h4>
+                        <p class="literary-subtitle text-sm text-muted-foreground">
+                            Cada palabra debe ser esencial. Si no aporta, debe ser eliminada sin piedad.
+                        </p>
+                    </div>
+                    <!-- @END_COMPONENT: TipCard -->
+
+                    <!-- @COMPONENT: TipCard [number, title, description] -->
+                    <div class="bg-card rounded-lg p-6 border border-border text-center">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-xl mx-auto mb-4">3</div>
+                        <h4 class="literary-title text-lg font-semibold text-foreground mb-2">Un Solo Momento</h4>
+                        <p class="literary-subtitle text-sm text-muted-foreground">
+                            Concéntrate en un instante específico que contenga toda la historia.
+                        </p>
+                    </div>
+                    <!-- @END_COMPONENT: TipCard -->
+
+                    <!-- @COMPONENT: TipCard [number, title, description] -->
+                    <div class="bg-card rounded-lg p-6 border border-border text-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl mx-auto mb-4">4</div>
+                        <h4 class="literary-title text-lg font-semibold text-foreground mb-2">Sorprende al Lector</h4>
+                        <p class="literary-subtitle text-sm text-muted-foreground">
+                            El giro inesperado es el alma del microrrelato exitoso.
+                        </p>
+                    </div>
+                    <!-- @END_COMPONENT: TipCard -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="literary-title text-4xl md:text-5xl font-bold text-foreground mb-4">
+                    Masterclass de Microrrelatos
+                </h2>
+                <p class="literary-subtitle text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Aprende de los maestros del género y descubre los secretos detrás de las historias más impactantes
+                </p>
+            </div>
+
+            <div class="bg-card rounded-xl p-8 border border-border fade-in">
+                <div class="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
+                    <!-- Video placeholder - in production, replace with actual video embed -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-play text-primary text-2xl ml-1"></i>
+                        </div>
+                        <p class="literary-title text-xl font-semibold text-foreground mb-2">
+                            El Arte del Microrrelato
+                        </p>
+                        <p class="literary-subtitle text-muted-foreground">
+                            Duración: 15 minutos
+                        </p>
+                        <!-- @FUNCTIONALITY: Replace with actual video embed using iframe -->
+                        <!-- <iframe src="video_url" class="w-full h-full rounded-lg" allowfullscreen></iframe> -->
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-primary mb-2">50K+</div>
+                        <p class="literary-subtitle text-muted-foreground">Estudiantes</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-secondary mb-2">4.9/5</div>
+                        <p class="literary-subtitle text-muted-foreground">Valoración</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-accent mb-2">15 min</div>
+                        <p class="literary-subtitle text-muted-foreground">Duración</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="mt-12 grid md:grid-cols-2 gap-6 fade-in">
+                <div class="bg-card rounded-lg p-6 border border-border">
+                    <h3 class="literary-title text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <i class="fas fa-book text-primary"></i>
+                        Lecturas Recomendadas
+                    </h3>
+                    <ul class="space-y-2 text-muted-foreground">
+                        <li class="literary-subtitle">• Antología de Microrrelatos Hispanoamericanos</li>
+                        <li class="literary-subtitle">• El Arte de la Brevedad - Ana María Shua</li>
+                        <li class="literary-subtitle">• Microrrelatos: Teoría e Historia - David Lagmanovich</li>
+                    </ul>
+                </div>
+
+                <div class="bg-card rounded-lg p-6 border border-border">
+                    <h3 class="literary-title text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <i class="fas fa-users text-secondary"></i>
+                        Únete a la Comunidad
+                    </h3>
+                    <p class="literary-subtitle text-muted-foreground mb-4">
+                        Comparte tus creaciones y recibe feedback de otros escritores apasionados por los microrrelatos.
+                    </p>
+                    <button class="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                        Unirse Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="literary-title text-2xl font-bold mb-4">Aprende Conmigo</h3>
+                    <p class="literary-subtitle text-background/80 mb-6">
+                        Explora el fascinante mundo de los microrrelatos y descubre cómo las mejores historias se cuentan en pocas palabras. Únete a nuestra comunidad de escritores y lectores apasionados.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-background/60 hover:text-background transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-background/60 hover:text-background transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-background/60 hover:text-background transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-background/60 hover:text-background transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="literary-title text-lg font-semibold mb-4">Enlaces</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="literary-subtitle text-background/80 hover:text-background transition-colors">Inicio</a></li>
+                        <li><a href="#historias" class="literary-subtitle text-background/80 hover:text-background transition-colors">Historias</a></li>
+                        <li><a href="#aprende" class="literary-subtitle text-background/80 hover:text-background transition-colors">Aprende</a></li>
+                        <li><a href="#video" class="literary-subtitle text-background/80 hover:text-background transition-colors">Video</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="literary-title text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 literary-subtitle text-background/80">
+                        <li><i class="fas fa-envelope mr-2"></i>contacto@aprendeconmigo.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>+34 123 456 789</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Madrid, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-background/20 mt-8 pt-8 text-center literary-subtitle text-background/60">
+                <p>&copy; 2024 Aprende Conmigo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Fade in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'md:hidden bg-background border-t border-border px-4 py-2 space-y-2';
+            mobileMenu.innerHTML = `
+                <a href="#inicio" class="block py-2 text-foreground hover:text-primary transition-colors">Inicio</a>
+                <a href="#historias" class="block py-2 text-foreground hover:text-primary transition-colors">Historias</a>
+                <a href="#aprende" class="block py-2 text-foreground hover:text-primary transition-colors">Aprende</a>
+                <a href="#video" class="block py-2 text-foreground hover:text-primary transition-colors">Video</a>
+            `;
+            
+            let mobileMenuOpen = false;
+            
+            mobileMenuButton.addEventListener('click', () => {
+                if (!mobileMenuOpen) {
+                    mobileMenuButton.parentElement.parentElement.appendChild(mobileMenu);
+                    mobileMenuOpen = true;
+                } else {
+                    mobileMenu.remove();
+                    mobileMenuOpen = false;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
