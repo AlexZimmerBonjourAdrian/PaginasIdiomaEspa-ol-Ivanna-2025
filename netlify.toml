@@ -2,5 +2,5 @@
   command = "npm run build"
   publish = ".next"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Recomendado por Netlify: instalar el plugin desde el Directory en la UI
+# y quitarlo de netlify.toml para usar la versión más reciente
